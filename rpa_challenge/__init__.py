@@ -6,7 +6,7 @@ import time
 
 # All the variables required
 url = "https://itdashboard.gov"
-dest_filename = "output/output.xlsx"
+dest_filename = "./rpa_challenge/output/output.xlsx"
 agency_to_scrape = "Department of Labor"
 
 # Empty objects are defined here for their global scope
@@ -19,7 +19,6 @@ def get_agencies_and_amounts():
     agencies_dict = {}
     browser.open_available_browser(url)
     browser.click_link("#home-dive-in")
-    # browser.wait_until_element_is_visible("//span[contains(@class, 'w200')]")
     browser.wait_until_element_is_visible("//div[contains(@id, 'agency-tiles-container')]", 15)
 
     elem = browser.find_element("//div[contains(@id, 'agency-tiles-container')]")
